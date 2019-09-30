@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  </link>
+</head>
+
+<body>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+  
+  
+    <div class="container">
+      <h2>Generate a Password</h2>
+      <textarea readonly id="password" placeholder="Your Secure Password"></textarea>
+    <div class="buttons">
+      <button id="generate">Generate Password</button>
+      <button id="copy">Copy to Clipboard</button>
+    </div>
+      <div>
+        <input type="range" id="length" name="slider" min="1" max="128">
+      </div>
+      <div id="length"></div>
+      <div class="checkbox">
+        <div>
+          <input type="checkbox" id="uppercase">
+          <label for="uppercase">Uppercase characters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lowercase">
+          <label for="lowercase">Lowercase charaters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="numeric">
+          <label for="numeric">Numeric characters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="special">
+          <label for="special">Special characters</label>
+        </div>
+      </div>
+    </div>
+  
+</body>
+<script src="../assets/generator.js"></script>
+
+</html>

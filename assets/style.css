@@ -1,0 +1,66 @@
+
+h1 {
+    text-align: center;
+}
+body {
+    background: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+    display: block;
+    margin: auto;
+    background: rgb(122, 209, 205);
+    padding: 15px 30px 15px; 
+    width: 960px;
+   
+}
+    
+.buttons {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#generate, #copy {
+    border-radius: 35px;
+    background: red;
+    padding: 10px;
+    color: white;
+    width: 250px;
+    font-size: 20px;
+    border-width: 0;
+    text-align: center;  
+}
+
+#generate {
+    margin-left: 80px;
+}
+#copy {
+    background: grey;
+    margin-left: 300px;
+  
+}
+
+#password {
+    width: 950px;
+    height: 150px;;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 20px 0 20px;
+
+}
+
+.checkbox {
+    margin: 20px 0px 20px;
+
+}
+
+#length {
+    width: 100%;
+}
+
