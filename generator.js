@@ -5,8 +5,9 @@ var specialChar = "~!@#$%^&*(){}+";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var numeric = "0123456789";
-var passLength = document.getElementById("length").value;
+var passLength = document.getElementById("length");
 var password = "";
+var slider = document.getElementById("slider");
 
 
 function checkedCharacters() {
@@ -41,6 +42,12 @@ document.getElementById("generate").onclick = function() {
     document.getElementById("password").innerText = password;
 }
 
-
+slider.oninput = function () {
+    if (slider.value > 0) {
+        passLength.innerHTML = "Length: " + slider.value;
+    } else {
+        passLength.innerHTML = "Length: 1";
+    }
+}
 
 
