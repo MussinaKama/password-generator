@@ -8,7 +8,8 @@ var numeric = "0123456789";
 var passLength = document.getElementById("length");
 var password = "";
 var slider = document.getElementById("slider");
-
+var copy = document.getElementById("copy");
+var generate = document.getElementById("generate")
 
 function checkedCharacters() {
     if(document.getElementById("uppercase").checked) {
@@ -36,7 +37,7 @@ function checkedCharacters() {
     
 }
 
-document.getElementById("generate").onclick = function() {
+generate.onclick = function() {
     document.getElementById("password").innerText = "";
     checkedCharacters();
     document.getElementById("password").innerText = password;
@@ -50,4 +51,11 @@ slider.oninput = function () {
     }
 }
 
+copy.addEventListener("click", copyToClipboard);
 
+function copyToClipboard () {
+    var copyPassword = document.getElementById("password");
+    copyPassword.select();
+    document.execCommand("copy");
+alert("Password copied to clipboard " + copyPassword.value)
+}
