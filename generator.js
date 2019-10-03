@@ -5,6 +5,7 @@ var specialChar = "~!@#$%^&*(){}+";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var numeric = "0123456789";
+var finalchars = "";
 var passLength = document.getElementById("length");
 var password = "";
 var slider = document.getElementById("slider");
@@ -13,41 +14,39 @@ var generate = document.getElementById("generate")
 
 function checkedCharacters() {
     if(document.getElementById("uppercase").checked) {
-        var randomNum = Math.floor(Math.random() * upperCase.length);
-        password += upperCase[randomNum];
+      
+        finalchars+=upperCase;
         
     }
     if(document.getElementById("lowercase").checked) {
-        var randomNum = Math.floor(Math.random() * lowerCase.length);
-        password += lowerCase[randomNum];
-        
+       
+        finalchars+=lowerCase;  
     }
 
     if(document.getElementById("numeric").checked) {
-        var randomNum = Math.floor(Math.random() * 10);
-        password += randomNum;
-     
+        finalchars+=numeric;
     }
 
     if(document.getElementById("special").checked) {
-        var randomNum = Math.floor(Math.random() * specialChar.length);
-        password += specialChar[randomNum];
-        
-    }
-    
+        finalchars+=specialChar;
+    }   
 }
 
 generate.onclick = function() {
     document.getElementById("password").innerText = "";
+    password = "";
     checkedCharacters();
+    for(var i=0; i<=slider.value; i++){
+        password += finalchars[Math.floor(Math.random() * finalchars.length)];
+    }
     document.getElementById("password").innerText = password;
 }
 
 slider.oninput = function () {
-    if (slider.value > 0) {
+    if (slider.value > 8) {
         passLength.innerHTML = "Length: " + slider.value;
     } else {
-        passLength.innerHTML = "Length: 1";
+        passLength.innerHTML = "Length: 8";
     }
 }
 
@@ -58,4 +57,5 @@ function copyToClipboard () {
     copyPassword.select();
     document.execCommand("copy");
 alert("Password copied to clipboard " + copyPassword.value)
+
 }
